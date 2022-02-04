@@ -1,0 +1,248 @@
+# First Message 
+print('Hello!')
+
+"""
+data : 'Hello!' -> function : print -> action : shows it to the screen
+
+"""
+
+print('message')
+
+# Note: we will focus on strings a lot since they are important in bioinformatics.
+
+# Any coding language has 4 essential parts.
+"""
+    1 - Data
+    2 - Conditionals
+    3 - Loops 
+    4 - Functions
+"""
+# It has one extra still important and also sophisticated part
+
+"""
+    5 - Objects
+"""
+# Session : 1 
+# Data 
+    # Generalities on data
+"""
+    Data is everything. It is information. We can use it to model anything we can think of or experience.
+
+    What do we do with data in general, is that, we transmit it and transform it according to our needs.
+    
+    A GOOD analogy is to think of data as analogous to both, information and energy.
+    
+"""
+
+    # Five basic types of Data
+    # 3 primitive types - they have no structure (string are expections)
+"""
+        Numbers - used to represent quantities 
+        Strings - used to represent text and also qualities
+            *Side Note* : 
+                This type of value has this generic-purpose aspect where it can be used to represent all other values textually as all their literals are part of possible characters that can compose a string. 
+
+                In fact the whole code can be represented as a string.
+
+                The interesting part about this possiblity is that we can perform parsing along with manipulation on the string representation of code pieces that can mimick built-in or programmable utilities and even allow advanced meta patterns which are only realizable if code itself as-written is considered as data.
+
+        Booleans - used to represent binary options
+"""
+# Number values
+1, 100, 2.5 
+
+# String values
+'put your text here' # single quotes 
+"put your text here" # double quotes
+
+'I can\'t help you' # using backslash to escape (')
+# OR
+"I can't help you" # CONCLUSION : it is better to use D-Q generally.
+
+'a' # smallest string possible is a character
+
+# Boolean values
+True, False
+
+
+    # 2 composite types - they do have structure
+"""
+        Lists - can hold a collection of primitives and even composites
+        Dictionaries - can hold a key - value pair just like we have a word and its definition
+"""
+
+# List values
+[] # empty list
+
+[1 ,2 , 3] # a list of numbers
+['Hello', "I can't", "bitch"] # a list of strings
+[True, False, True] # a list of booleans 
+
+[1 ,2 ,"Bye", False] # a mixed list of values
+
+a = [1, 2 , 3]
+b = [True, False]
+
+[a, b] # a list containing lists
+
+# Dictionary values
+{} # empty dictionary
+
+"""
+    A dictionary is a map between values. It associates a value to another as a {key : value} pair. Both the key and value are "data values". They could be any value we have seen so far.
+    What is important is that we will create a link of the type,
+                valueA -> valueB
+"""
+{
+    'x' : 1,        # 'x' -> 1
+    True : "Hello", # True -> "Hello"
+    50 : False,     # 50 -> False
+    [1, 2, 3] : 0.5,# [1, 2, 3] -> 0.5
+    { 1 : 'me'} : 0 # { 1 : 'me'} -> 0
+}
+
+    # Variables
+
+"""
+    An important part of manipulatin data is storing them. We can do that using variables. 
+    
+    They are label we put on some "virtual" container in memory where we put our value and then can access it by calling the label.
+
+"""
+
+variable_name = value # value can be any value we have seen so far
+
+variable_name # this will retrieve the value that we put inside our variable
+
+variable_name = new_value # we can reassign or change the value that exists already in our variable with another value if we want.
+
+    # Data manipulation
+
+"""
+    For numbers, we can perform basic arithmetics (+, -, *, /, **, //, %) and relational operations (==, !=, <, >, <=, >=). As for booleans, we can use them to perform logical operations (and, or, not).
+"""
+
+"""
+    Syntax:
+        number [arithmetic operator] number -> number
+        number [relational operator] number -> boolean
+
+        boolean [logical operator] boolean -> boolean
+
+        for the not-operator,
+
+        [logical operator] boolean -> boolean
+
+        Truth Table:
+            True and True -> True
+            True and False -> False
+            False and False -> False
+
+            True or True -> True
+            True or False -> True
+            False or False -> False
+
+            not True -> False
+            not False -> True
+"""
+
+# Session 2
+# More on Data
+
+"""
+    Question 1 : What are the most fundamental operations we can perform on such structures ?
+        [*] Access elements (setting and getting elements)
+        [*] Add/Remove elements
+        [*] Apply on all elements
+"""
+
+    # String/List Manipulations
+"""
+    The reason both string and lists are grouped in one section is because they share the aspect of being a collection of things ordered in some fashion within the same container. Our ways of dealing with both of these values are going to be similar to great extents.
+
+    String methods:
+        
+        string[index] # returns the character at index
+        stringA + stringB # concatenates the two strings into one
+
+        .capitalize() # converts the first character to uppercase 
+        .upper() # converts string to uppercase
+        .lower() # converts string to lowercase
+        .title() # converts the first character of each word to uppercase
+        .swapcase() # swaps uppercase into lowercase and vice versa
+
+        .translate(dictionary)  # applies changes described by the associations within the dictionary
+
+        .strip() # removes spaces from the beginning and the end of the string
+        .rstrip()
+        .lstrip()
+
+        .split(separator) # returns a list of string elements cut from the original string at a certain separator
+        separator.join(list) # returns a string of the list elements joined by the separator
+
+        .startswith(header) # returns true if the string starts with header
+        .endswith(footer) # returns true if the string ends with footer
+
+        .center(length) # centers the string within the given length
+        .ljust(length)
+        .rjust(length)
+
+        .format(args) # returns a formatted string using placeholders
+            *string placeholders*
+                {} --- this is a placeholder
+                {index} to refer to an unnamed value within args, index = 0, 1, 2 ...
+                {key} to refer to a named value 
+        
+        .count(text) # counts the number of times text is found in the string
+        .find(text) # returns the position where text is found
+        .replace(old, new) # replaces old with new
+
+        .partition(match) # parition the string at the match and returns a three element list. First is the before the match, second the match and last, after the match.
+
+        .isupper() # returns true if all are uppercase
+        .islower() # returns true if all are lowercase
+        .istitle() # returns true if title
+        .isspace() # returns true if spaces
+        
+        .isnumeric() # returns true if all are numbers
+        .isalpha() # returns true if all are alphabet
+
+        .isidentifier() # returns true if (a-z) | (0-9) | _ (underscore)
+
+    List methods:
+
+        list[index] # returns elements at index
+        list[index] = newElement # changes the element
+
+        .append(element) # adds an element to the end
+        .pop() # removes the last element
+
+        .extend(list) # adds the list to the previous one
+
+        .count(elements) # counts the number of occurences of a certain element
+
+        .reverse() # reverse the order of a list
+
+        .copy() # returns a copy the list
+        .clear() # clears the list 
+
+"""
+
+    # Dictionary Manipulations
+"""
+    Dictionary methods:
+
+        dictionary[key] # returns value
+        dictionary[key] = newValue # changes the association
+        
+        .keys() # returns a list the keys
+        .values() # returns a list the values
+        .items() # returns a list of (key, value) pairs
+
+        .update({key: value, ...}) # updates the dictionary with new associations
+        .pop(key) # removes the pair with the specific key
+
+        .copy() # returns a copy of a dictionary
+        .clear() # clears the dictionary
+"""
+
