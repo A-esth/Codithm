@@ -3,11 +3,17 @@
 ## Labels
 
 Environment or Static Variable - `__context__` (for dynamic context parameters) or `__CONTEXT__` (for static context settings)
+
 Constant - `ALL_CAPITALS`
+
 Variable or Property - `camelCase`
+
 Hidden Property - `_camelCase`
+
 Function or Feature - `camelCase`
+
 Hidden Feature - `__camelCase`
+
 Class or Object - `PascalCase`
 
 ## Spaces
