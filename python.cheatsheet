@@ -33,7 +33,6 @@ print('message')
     A GOOD analogy is to think of data as analogous to both, information and energy.
     
 """
-
     # Five basic types of Data
     # 3 primitive types - they have no structure (string are expections)
 """
